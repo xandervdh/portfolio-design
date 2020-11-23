@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\ArticlesRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
@@ -24,7 +26,7 @@ class Articles
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="article_image", fileNameProperty="imageName")
      *
      * @var File|null
      */
@@ -50,6 +52,27 @@ class Articles
         }
     }
 
+    /**
+     * @param ExecutionContextInterface $context
+     * @Assert\Callback
+     */
+    public function validate(ExecutionContextInterface $context)
+    {
+        if (! in_array($this->imageFile->getMimeType(), array(
+            'image/jpeg',
+            'image/gif',
+            'image/png',
+            'video/mp4',
+            'video/quicktime',
+            'video/avi',
+        ))) {
+            $context
+                ->buildViolation('Wrong file type (jpg,gif,png,mp4,mov,avi)')
+                ->atPath('fileName')
+                ->addViolation()
+            ;
+        }
+    }
     /**
      * @return File|null
      */
@@ -121,15 +144,13 @@ class Articles
      */
     private $content;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $picture;
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $tags;
+
 
     public function getId(): ?int
     {
@@ -172,17 +193,6 @@ class Articles
         return $this;
     }
 
-    public function getPicture(): ?string
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(?string $picture): self
-    {
-        $this->picture = $picture;
-
-        return $this;
-    }
 
     public function getTags(): ?string
     {

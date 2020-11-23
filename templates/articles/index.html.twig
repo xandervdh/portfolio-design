@@ -17,27 +17,26 @@
                 <th>Tags</th>
                 <th>actions</th>
             </tr>
-            </thead>
-            <tbody>
-            {% for article in articles %}
-                <tr>
-                    <td>{{ article.id }}</td>
-                    <td>{{ article.title }}</td>
-                    <td>{{ article.link }}</td>
-                    <td>{{ article.content }}</td>
-                    <td>{{ article.picture }}</td>
-                    <td>{{ article.tags }}</td>
-                    <td>
-                        <a href="{{ path('articles_show', {'id': article.id}) }}">show</a>
-                        <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="7">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.link }}</td>
+                <td>{{ article.content }}</td>
+                <td>{{ article.tags }}</td>
+                <td>
+                    <a href="{{ path('articles_show', {'id': article.id}) }}">show</a>
+                    <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     </div>
 {% endblock %}

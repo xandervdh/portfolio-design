@@ -25,8 +25,12 @@
                 <td>{{ article.content }}</td>
             </tr>
             <tr>
+                <th>Picture file name</th>
+                <td> {{ article.imageName }}</td>
+            </tr>
+            <tr>
                 <th>Picture</th>
-                <td>{{ article.picture }}</td>
+               <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
             </tr>
             <tr>
                 <th>Tags</th>
