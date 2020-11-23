@@ -20,6 +20,7 @@ class ArticlesController extends AbstractController
      */
     public function index(ArticlesRepository $articlesRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('articles/index.html.twig', [
             'articles' => $articlesRepository->findAll(),
         ]);
@@ -30,6 +31,7 @@ class ArticlesController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $article = new Articles();
         $form = $this->createForm(ArticlesType::class, $article);
         $form->handleRequest($request);
@@ -53,6 +55,7 @@ class ArticlesController extends AbstractController
      */
     public function show(Articles $article): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('articles/show.html.twig', [
             'article' => $article,
         ]);
@@ -63,6 +66,7 @@ class ArticlesController extends AbstractController
      */
     public function edit(Request $request, Articles $article): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $form = $this->createForm(ArticlesType::class, $article);
         $form->handleRequest($request);
 
@@ -83,6 +87,7 @@ class ArticlesController extends AbstractController
      */
     public function delete(Request $request, Articles $article): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
