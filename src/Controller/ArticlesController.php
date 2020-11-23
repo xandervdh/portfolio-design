@@ -48,15 +48,15 @@ class ArticlesController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="articles_show", methods={"GET"})
-     */
-    public function show(Articles $article): Response
-    {
-        return $this->render('articles/show.html.twig', [
-            'article' => $article,
-        ]);
-    }
+//    /**
+//     * @Route("/{id}", name="articles_show", methods={"GET"})
+//     */
+//    public function show(Articles $article): Response
+//    {
+//        return $this->render('articles/show.html.twig', [
+//            'article' => $article,
+//        ]);
+//    }
 
     /**
      * @Route("/{id}/edit", name="articles_edit", methods={"GET","POST"})
