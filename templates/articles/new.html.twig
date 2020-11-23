@@ -1,4 +1,4 @@
-{% extends 'clientBase.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}New Articles{% endblock %}
 
@@ -7,5 +7,4 @@
 
     {{ include('articles/_form.html.twig') }}
 
-    <a href="{{ path('articles_index') }}">back to list</a>
 {% endblock %}
