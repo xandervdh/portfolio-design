@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 
 {% block title %}Articles index{% endblock %}
 
@@ -38,6 +38,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('articles_new') }}">Create new</a>
 {% endblock %}
