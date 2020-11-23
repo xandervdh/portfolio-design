@@ -25,6 +25,7 @@
                 <td>{{ article.title }}</td>
                 <td>{{ article.link }}</td>
                 <td>{{ article.content }}</td>
+                <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
                 <td>{{ article.tags }}</td>
                 <td>
                     <a href="{{ path('articles_show', {'id': article.id}) }}">show</a>
