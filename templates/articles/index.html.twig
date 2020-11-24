@@ -22,11 +22,12 @@
                 <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
                 <td>
                     {% for tag in article.tags %}
-                       {{ tag }} ,
+                       <div class="tagColumn"> {{ tag }}</div>
                     {% endfor %}
                 </td>
                 <td>
-                    <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a>
+                    <button type="button" class="btn btn-success">
+                        <a class="indexButton" href="{{ path('articles_edit', {'id': article.id}) }}">edit</a></button>
                 </td>
             </tr>
         {% else %}

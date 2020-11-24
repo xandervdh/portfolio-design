@@ -11,5 +11,37 @@ html, body {
 
 .footer {
     text-align: center;
-    margin: 50px 0;
+    margin: 25px 0;
+    font-size: smaller;
+    text-transform: capitalize;
+    color: grey;
+}
+
+img {
+    width: 500px;
+    height: auto;
+}
+
+/* INDEX.HTML TABLE*/
+
+.tagColumn {
+    width: 100px;
+    text-transform: capitalize;
+}
+
+.indexButton,
+.indexButton:visited,
+.indexButton:hover {
+    color: #f1f2f3;
+    text-decoration: none;
+
+}
+
+/* SHOW.HTML TABLE*/
+
+.editButtonShow,
+.editButtonShow:visited,
+.editButtonShow:hover {
+    color: #f1f2f3;
+    text-decoration: none;
 }
