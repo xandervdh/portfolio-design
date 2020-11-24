@@ -44,19 +44,19 @@ class MasterController extends AbstractController
                $articles = $articlesRepository->findAll();
                break;
             case "javascript":
-                $articles = $articlesRepository->findBy(['tags' => 'javascript']);
+                $articles = $articlesRepository->findByTag('javascript');
                 break;
             case "HTML":
-                $articles = $articlesRepository->findBy(['tags' => 'HTML']);
+                $articles = $articlesRepository->findByTag('HTML');
                 break;
             case "PHP":
-                $articles = $articlesRepository->findBy(['tags' => 'PHP']);
+                $articles = $articlesRepository->findByTag('PHP');
                 break;
             case "bootstrap":
-                $articles = $articlesRepository->findBy(['tags' => 'bootstrap']);
+                $articles = $articlesRepository->findByTag('bootstrap');
                 break;
             case "symfony":
-                $articles = $articlesRepository->findBy(['tags' => 'symfony']);
+                $articles = $articlesRepository->findByTag('symfony');
                 break;
         }
         return $this->render('master/index.html.twig', [
