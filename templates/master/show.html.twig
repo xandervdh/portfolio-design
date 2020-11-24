@@ -5,26 +5,16 @@
 {% block body %}
     <div class="container">
         <h1>{{ article.title }}</h1>
+        <a href="{{ article.link }}">link to project</a><br>
+        <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" />
+        <p>{{ article.content }}</p>
+        <span>Tags:
+        {% for tag in article.tags %}
+            <a href="{{ path('homepagearticles', {'category': tag}) }}">{{ tag }}</a>
+            {% endfor %}
+        </span>
 
-        <table class="table">
-            <tbody>
-            <tr>
-                <th>Link</th>
-                <td>{{ article.link }}</td>
-            </tr>
-            <tr>
-                <th>Picture</th>
-                <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ article.content }}</td>
-            </tr>
-            <tr>
-                <th>Tags</th>
-                <td>{{ article.tags }}</td>
-            </tr>
-            </tbody>
-        </table>
+
+
     </div>
 {% endblock %}
