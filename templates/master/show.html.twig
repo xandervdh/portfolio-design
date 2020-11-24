@@ -1,0 +1,30 @@
+{% extends 'clientBase.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ article.title }}</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Link</th>
+                <td>{{ article.link }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ article.content }}</td>
+            </tr>
+            <tr>
+                <th>Tags</th>
+                <td>{{ article.tags }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

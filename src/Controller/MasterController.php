@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Articles;
+use App\Repository\ArticlesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +18,7 @@ class MasterController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('master/index.html.twig', [
+        return $this->render('master/home.html.twig', [
             'controller_name' => 'homepage',
         ]);
     }
@@ -26,7 +28,7 @@ class MasterController extends AbstractController
      */
     public function aboutMe(): Response
     {
-        return $this->render('master/index.html.twig', [
+        return $this->render('master/home.html.twig', [
             'controller_name' => 'about me',
         ]);
     }
@@ -34,20 +36,41 @@ class MasterController extends AbstractController
     /**
      * @Route("/articles/{category}", name="articles")
      */
-    public function portfolioArticles($category): Response
+    public function portfolioArticles($category, ArticlesRepository $articlesRepository): Response
     {
+        $articles = [];
+        switch ($category){
+            case "all":
+               $articles = $articlesRepository->findAll();
+               break;
+            case "javascript":
+                $articles = $articlesRepository->findBy(['tags' => 'javascript']);
+                break;
+            case "HTML":
+                $articles = $articlesRepository->findBy(['tags' => 'HTML']);
+                break;
+            case "PHP":
+                $articles = $articlesRepository->findBy(['tags' => 'PHP']);
+                break;
+            case "bootstrap":
+                $articles = $articlesRepository->findBy(['tags' => 'bootstrap']);
+                break;
+            case "symfony":
+                $articles = $articlesRepository->findBy(['tags' => 'symfony']);
+                break;
+        }
         return $this->render('master/index.html.twig', [
-            'controller_name' => 'articles ' . $category,
+            'articles' => $articles,
         ]);
     }
 
     /**
      * @Route("/article/{id}", name="article")
      */
-    public function showArticle($id): Response
+    public function showArticle(Articles $article): Response
     {
-        return $this->render('master/index.html.twig', [
-            'controller_name' => 'article ' . $id,
+        return $this->render('master/show.html.twig', [
+            'article' => $article,
         ]);
     }
 
@@ -56,7 +79,7 @@ class MasterController extends AbstractController
      */
     public function contact(): Response
     {
-        return $this->render('master/index.html.twig', [
+        return $this->render('master/home.html.twig', [
             'controller_name' => 'contact',
         ]);
     }
