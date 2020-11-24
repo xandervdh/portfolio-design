@@ -16,7 +16,6 @@ class ArticlesType extends AbstractType
             ->add('title')
             ->add('link')
             ->add('content')
-            ->add('imageName')
             ->add('imageFile', VichImageType::class)
             ->add('tags')
         ;
