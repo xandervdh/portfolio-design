@@ -1,3 +1,15 @@
+html, body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
 .container {
     margin-top: 60px;
+    flex: 1;
+}
+
+.footer {
+    text-align: center;
+    margin: 50px 0;
 }
