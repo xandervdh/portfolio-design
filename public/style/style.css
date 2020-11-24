@@ -22,7 +22,34 @@ img {
     height: auto;
 }
 
-/* INDEX.HTML TABLE*/
+/*MASTER HOME.HTML */
+
+.greetingContainer{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 125px;
+    background-color: #5eb5e0;
+    border-radius: 15px;
+}
+.greetingContainer:hover{
+    box-shadow: #AAAAAA 5px 5px;
+}
+
+.greeting{
+    color: #f1f2f3;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+/*ARTICLES INDEX.HTML TABLE*/
 
 .tagColumn {
     width: 100px;
