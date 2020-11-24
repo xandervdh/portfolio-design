@@ -20,7 +20,7 @@ class ArticlesType extends AbstractType
             ->add('content')
             ->add('imageFile', VichImageType::class)
             ->add('tags', ChoiceType::class, [
-                'choices'   => array('HTML' => 'HTML', 'Javascript' => 'javascript', 'Bootstrap' => 'bootstrap', 'Symfony' => 'Symfony', 'PHP' => 'PHP'),
+                'choices'   => array('HTML' => 'HTML', 'Javascript' => 'javascript', 'Bootstrap' => 'bootstrap', 'Symfony' => 'symfony', 'PHP' => 'PHP'),
                 'required'  => false,
                 'expanded' => true,
                 'multiple' => true,
