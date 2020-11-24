@@ -147,7 +147,7 @@ class Articles
 
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="json", nullable=false)
      */
     private $tags;
 
@@ -194,12 +194,12 @@ class Articles
     }
 
 
-    public function getTags(): ?string
+    public function getTags(): ?array
     {
         return $this->tags;
     }
 
-    public function setTags(?string $tags): self
+    public function setTags(?array $tags): self
     {
         $this->tags = $tags;
 

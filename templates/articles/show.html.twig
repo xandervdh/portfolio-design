@@ -4,33 +4,29 @@
 
 {% block body %}
     <div class="container">
-        <h1>Article</h1>
+        <h1>{{ article.title }}</h1>
 
         <table class="table">
             <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ article.title }}</td>
-            </tr>
-            <tr>
                 <th>Link</th>
                 <td>{{ article.link }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
             </tr>
             <tr>
                 <th>Content</th>
                 <td>{{ article.content }}</td>
             </tr>
             <tr>
-                <th>Picture</th>
-               <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
-            </tr>
-            <tr>
                 <th>Tags</th>
-                <td>{{ article.tags }}</td>
+                <td>
+                    {% for tag in article.tags %}
+                        {{ tag }},
+                    {% endfor %}
+                </td>
             </tr>
             </tbody>
         </table>

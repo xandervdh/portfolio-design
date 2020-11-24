@@ -19,7 +19,11 @@
             <tr>
                 <td><a href="{{ path('homepagearticle', {'id': article.id}) }}">{{ article.title }}</a></td>
                 <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
-                <td>{{ article.tags }}</td>
+                <td>
+                    {% for tag in article.tags %}
+                        <a href="{{ path('homepagearticles', {'category': tag}) }}">{{ tag }}</a>
+                    {% endfor %}
+                </td>
             </tr>
         {% else %}
             <tr>
