@@ -1,9 +1,32 @@
 {% extends 'clientBase.html.twig' %}
 
-{% block title %}Hello MasterController!{% endblock %}
+{% block title %}Articles index{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Hello {{ controller_name }}!</h1>
-</div>
+    <div class="container">
+        <h1>Articles index</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Picture</th>
+                <th>Tags</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td><a href="{{ path('homepagearticle', {'id': article.id}) }}">{{ article.title }}</a></td>
+                <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
+                <td>{{ article.tags }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
 {% endblock %}
