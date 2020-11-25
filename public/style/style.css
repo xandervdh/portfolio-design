@@ -17,3 +17,22 @@ html, body {
 .article {
     text-align: center;
 }
+
+#contact {
+    margin-top: 60px;
+    flex: 1;
+}
+
+#map {
+    background-color: blue;
+    width: 50%;
+    height: 80vh;
+    float: left;
+}
+
+#info {
+    background-color: green;
+    width: 50%;
+    float: left;
+    height: 80vh;
+}
