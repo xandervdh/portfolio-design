@@ -8,21 +8,21 @@
 
         <table class="table">
             <tbody>
-            <tr>
-                <th>Link</th>
-                <td>{{ article.link }}</td>
+            <tr>Show
+                <th class="tableShowHeader">Link</th>
+                <td class="tableShowColumn">{{ article.link }}</td>
             </tr>
             <tr>
-                <th>Picture</th>
-                <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
+                <th class="tableShowHeader">Picture</th>
+                <td class="tableShowColumn"><img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
             </tr>
             <tr>
-                <th>Content</th>
-                <td>{{ article.content }}</td>
+                <th class="tableShowHeader">Content</th>
+                <td class="tableShowColumn">{{ article.content }}</td>
             </tr>
             <tr>
-                <th>Tags</th>
-                <td>
+                <th class="tableShowHeader">Tags</th>
+                <td class="tableShowColumn">
                     {% for tag in article.tags %}
                         {{ tag }},
                     {% endfor %}
@@ -30,8 +30,8 @@
             </tr>
             </tbody>
         </table>
-
-        <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a>
+        <button type="button"  class="btn btn-success">
+            <a class="editButtonShow" href="{{ path('articles_edit', {'id': article.id}) }}">edit</a></button>
 
         {{ include('articles/_delete_form.html.twig') }}
     </div>
