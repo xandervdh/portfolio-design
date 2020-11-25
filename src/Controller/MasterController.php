@@ -28,7 +28,7 @@ class MasterController extends AbstractController
      */
     public function aboutMe(): Response
     {
-        return $this->render('master/home.html.twig', [
+        return $this->render('master/about.html.twig', [
             'controller_name' => 'about me',
         ]);
     }
@@ -79,7 +79,7 @@ class MasterController extends AbstractController
      */
     public function contact(): Response
     {
-        return $this->render('master/home.html.twig', [
+        return $this->render('master/contact.html.twig', [
             'controller_name' => 'contact',
         ]);
     }
