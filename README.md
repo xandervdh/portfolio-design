@@ -2,33 +2,33 @@
  <h6> With Symfony</h6>
  
 ## INSTALLING SYMFONY
-follow the link to install section of docs.
+follow the link to install section of docs.\
 https://symfony.com/doc/current/setup.html
 
 
 ## INSTALLING COMPOSER
-follow the link to docs.
+follow the link to docs.\
 https://symfony.com/doc/4.1/setup/composer.html
 
 
 ## BUNDLES USED
 
-Symfony\Bundle\FrameworkBundle\FrameworkBundle
-Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
-Symfony\Bundle\MonologBundle\MonologBundle
-Symfony\Bundle\DebugBundle\DebugBundle
-Symfony\Bundle\MakerBundle\MakerBundle   
-Symfony\Bundle\SecurityBundle\SecurityBundle
-Symfony\Bundle\TwigBundle\TwigBundle   
-Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
-Doctrine\Bundle\DoctrineBundle\DoctrineBundle
-Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle
-Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle
-Twig\Extra\TwigExtraBundle\TwigExtraBundle
-Vich\UploaderBundle\VichUploaderBundle
+- Symfony\Bundle\FrameworkBundle\FrameworkBundle
+- Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
+- Symfony\Bundle\MonologBundle\MonologBundle
+- Symfony\Bundle\DebugBundle\DebugBundle
+- Symfony\Bundle\MakerBundle\MakerBundle   
+- Symfony\Bundle\SecurityBundle\SecurityBundle
+- Symfony\Bundle\TwigBundle\TwigBundle   
+- Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
+- Doctrine\Bundle\DoctrineBundle\DoctrineBundle
+- Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle
+- Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle
+- Twig\Extra\TwigExtraBundle\TwigExtraBundle
+- Vich\UploaderBundle\VichUploaderBundle
 
 ##### information on the VichUploaderBundle
-follow the link to well documented docs, just follow all the steps.
+follow the link to well documented docs, just follow all the steps.\
 https://github.com/dustin10/VichUploaderBundle
 
 # Goal of project
