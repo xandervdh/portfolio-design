@@ -83,4 +83,18 @@ class MasterController extends AbstractController
            // 'controller_name' => 'contact',
         ]);
     }
+
+    /**
+     * @Route("/search/", name="search", methods={"POST"})
+     */
+    public function search(ArticlesRepository $repository)
+    {
+        $value = $_POST['search'];
+        var_dump($value);
+        $result = $repository->findBySearch($value);
+
+        return $this->render('master/search.html.twig', [
+            'results' => $result,
+        ]);
+    }
 }
