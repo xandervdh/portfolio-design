@@ -11,20 +11,10 @@ follow the link to docs.\
 https://symfony.com/doc/4.1/setup/composer.html
 
 
-## BUNDLES USED
+## TOOLS USED
 
-- Symfony\Bundle\FrameworkBundle\FrameworkBundle
-- Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
-- Symfony\Bundle\MonologBundle\MonologBundle
-- Symfony\Bundle\DebugBundle\DebugBundle
-- Symfony\Bundle\MakerBundle\MakerBundle   
-- Symfony\Bundle\SecurityBundle\SecurityBundle
-- Symfony\Bundle\TwigBundle\TwigBundle   
-- Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
-- Doctrine\Bundle\DoctrineBundle\DoctrineBundle
-- Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle
-- Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle
-- Twig\Extra\TwigExtraBundle\TwigExtraBundle
+- Datagrip database
+- Doctrine
 - Vich\UploaderBundle\VichUploaderBundle
 
 ##### information on the VichUploaderBundle
@@ -43,3 +33,13 @@ open viewing for whomever wants to visit.
 
 
 
+### Getting started
+Make use of the bin\console make command to generate
+- User Entity
+- Articles Entity\
+you'll need to edit the Articles Entity once you're working with the VichUploader
+- Login
+- Form
+
+Add the functionality from the Vich uploader
+Migrate your entities to your database
