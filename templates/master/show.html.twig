@@ -6,7 +6,7 @@
     <div class="container">
         <h1>{{ article.title }}</h1>
         <a href="{{ article.link }}">link to project</a><br>
-        <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" />
+        <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="project demo image" />
         <p>{{ article.content }}</p>
         <span>Tags:
         {% for tag in article.tags %}
