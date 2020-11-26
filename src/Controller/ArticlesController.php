@@ -16,19 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticlesController extends AbstractController
 {
     /**
-     * @Route("/dashboard", name="dashboard", methods={"GET"})
-     */
-    public function dashboard(ArticlesRepository $articlesRepository): Response
-    {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
-        $articles = count($articlesRepository->findAll());
-        return $this->render('articles/dashboard.html.twig', [
-            'controller_name' => 'dashboard',
-            'articles' => $articles,
-        ]);
-    }
-
-    /**
      * @Route("/", name="articles_index", methods={"GET"})
      */
     public function index(ArticlesRepository $articlesRepository): Response
