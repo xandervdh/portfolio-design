@@ -33,6 +33,17 @@ class ArticlesRepository extends ServiceEntityRepository
 
     }
 
+    public function findBySearch($value)
+    {
+        $qb = $this->createQueryBuilder('a');
+        $qb->select('a')
+            ->where("a.content LIKE '%$value%'")
+        ;
+        $query = $qb->getQuery();
+        return $query->getResult();
+
+    }
+
     /*
     public function findOneBySomeField($value): ?Articles
     {
