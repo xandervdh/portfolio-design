@@ -34,6 +34,7 @@ open viewing for whomever wants to visit.
 
 
 ### Getting started
+
 Make use of the bin\console make command to generate
 - User Entity
 - Articles Entity\
@@ -42,4 +43,5 @@ you'll need to edit the Articles Entity once you're working with the VichUploade
 - Form
 
 Add the functionality from the Vich uploader
+create your env.local file and link your credentials
 Migrate your entities to your database
