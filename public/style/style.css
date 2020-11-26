@@ -27,14 +27,12 @@ html, body {
 }
 
 #map {
-    background-color: blue;
     width: 50%;
     height: 85vh;
     float: left;
 }
 
 #info {
-    background-color: green;
     width: 50%;
     float: left;
     height: 85vh;
