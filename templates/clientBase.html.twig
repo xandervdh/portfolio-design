@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
@@ -10,6 +10,18 @@
         <link href="{{ asset("style/style.css") }}" rel="stylesheet"/>
     {% endblock %}
 </head>
+{% block analytics %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=253989137"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+{% endblock %}
 <body>
 {% block menu %}
     <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
