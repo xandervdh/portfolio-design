@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Entity\Users;
 use App\Repository\ArticlesRepository;
-use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,7 +21,7 @@ class MasterController extends AbstractController
     public function index(): Response
     {
         return $this->render('master/home.html.twig', [
-            'controller_name' => 'succeeded',
+            'controller_name' => 'home',
         ]);
     }
 
