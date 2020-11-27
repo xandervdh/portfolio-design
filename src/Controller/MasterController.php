@@ -3,23 +3,44 @@
 namespace App\Controller;
 
 use App\Entity\Articles;
+use App\Entity\User;
 use App\Repository\ArticlesRepository;
+use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("/", name="homepage")
  */
 class MasterController extends AbstractController
 {
+
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index(ObjectManager $manager): Response
     {
+        $user = new User();
+        $user->setPassword($this->passwordEncoder->encodePassword(
+            $user,
+            'admin123'
+        ));
+        $user->setUsername('admin');
+        $user->setRoles(["ROLE_ADMIN"]);
+        $manager->persist($user);
+
+        $manager->flush();
         return $this->render('master/home.html.twig', [
-            'controller_name' => 'homepage',
+            'controller_name' => 'succeeded',
         ]);
     }
 
