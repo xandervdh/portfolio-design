@@ -140,7 +140,7 @@ class Articles
     private $link;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=4294967292)
      */
     private $content;
 
