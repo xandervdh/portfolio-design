@@ -42,6 +42,6 @@ you'll need to edit the Articles Entity once you're working with the VichUploade
 - Login
 - Form
 
-Add the functionality from the Vich uploader
-create your env.local file and link your credentials
+Add the functionality from the Vich uploader\
+create your env.local file and link your credentials\
 Migrate your entities to your database
