@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Articles;
-use App\Entity\User;
+use App\Entity\Users;
 use App\Repository\ArticlesRepository;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,7 +29,7 @@ class MasterController extends AbstractController
      */
     public function index(ObjectManager $manager): Response
     {
-        $user = new User();
+        $user = new Users();
         $user->setPassword($this->passwordEncoder->encodePassword(
             $user,
             'admin123'
