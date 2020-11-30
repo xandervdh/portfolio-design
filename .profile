@@ -1,1 +1,4 @@
-chmod 777 public/
+cd public/
+mkdir images
+cd images/
+mkdir articles
