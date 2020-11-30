@@ -1,1 +1,1 @@
-chmod 755 public/
+chmod 757 public/
