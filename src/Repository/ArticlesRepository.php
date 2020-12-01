@@ -26,8 +26,11 @@ class ArticlesRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('a');
         $qb->select('a')
-            ->where("a.tags LIKE '%$value%'")
+            ->from('articles', 'ar')
+            ->innerJoin('articles_tag', 'at', 'WITH', 'ar.id = at.article_id')
+            ->where('at.tag_id = 4')
         ;
+
         $query = $qb->getQuery();
         return $query->getResult();
     }

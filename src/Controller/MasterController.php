@@ -35,6 +35,30 @@ class MasterController extends AbstractController
         ]);
     }
 
+    public function getArticles($value)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $RAW_QUERY = 'SELECT * FROM articles JOIN articles_tag a on articles.id = a.articles_id WHERE a.tag_id =' . $value . ';';
+
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
+    public function getTags($value)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $RAW_QUERY = 'SELECT * FROM tag WHERE id = ' . $value . ';';
+
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
     /**
      * @Route("/articles/{category}", name="articles")
      */
@@ -46,13 +70,16 @@ class MasterController extends AbstractController
                $articles = $articlesRepository->findAll();
                break;
             case "javascript":
-                $articles = $articlesRepository->findByTag('javascript');
+                $articles = $this->getArticles(3);
+                $tags = $this->getTags(3);
                 break;
             case "HTML":
-                $articles = $articlesRepository->findByTag('HTML');
+                $articles = $this->getArticles(4);
+                $tags = $this->getTags(4);
                 break;
             case "PHP":
-                $articles = $articlesRepository->findByTag('PHP');
+                $articles = $this->getArticles(5);
+                $tags = $this->getTags(5);
                 break;
             case "bootstrap":
                 $articles = $articlesRepository->findByTag('bootstrap');
@@ -63,6 +90,7 @@ class MasterController extends AbstractController
         }
         return $this->render('master/index.html.twig', [
             'articles' => $articles,
+            'tags' => $tags,
         ]);
     }
 
