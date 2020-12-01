@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Articles;
+use App\Entity\Tag;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
+use App\Repository\TagRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,15 +44,22 @@ class ArticlesController extends AbstractController
     /**
      * @Route("/new", name="articles_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, TagRepository $repo): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $article = new Articles();
         $form = $this->createForm(ArticlesType::class, $article);
+        //var_dump($form);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $tagName = $data->getTags()[0]->getName();
             $entityManager = $this->getDoctrine()->getManager();
+            $tag = $repo->findOneBy(['name' => $tagName]);
+            //$tag->setName($data->getTags()[0]->getName());
+            //$tag->setArticle($article);
+            $article->addTag($tag);
             $entityManager->persist($article);
             $entityManager->flush();
 

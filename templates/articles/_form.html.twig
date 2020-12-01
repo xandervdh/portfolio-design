@@ -8,11 +8,7 @@
 {{ form_label(form.imageFile) }}<br>
 {{ form_widget(form.imageFile) }}<br>
 {{ form_label(form.tags) }}<br>
-{% for field in form.tags %}
-    <div style="display: inline-block; width: 180px;">
-        {{ form_widget(field) }}
-        {{ form_label(field) }}
-    </div>
-{% endfor %}<br>
-<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_widget(form.tags) }}<br>
+
+<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

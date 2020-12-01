@@ -21,8 +21,8 @@
                 <td><a href="{{ path('articles_show', {'id': article.id}) }}">{{ article.title }}</a></td>
                 <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
                 <td>
-                    {% for tag in article.tags %}
-                       <div class="tagColumn"> {{ tag }}</div>
+                    {% for tag in article.getTags() %}
+                       <div class="tagColumn"> {{ tag.getName() }}</div>
                     {% endfor %}
                 </td>
                 <td>

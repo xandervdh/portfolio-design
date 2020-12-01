@@ -25,12 +25,11 @@ class ArticlesRepository extends ServiceEntityRepository
     public function findByTag($value)
     {
         $qb = $this->createQueryBuilder('a');
-            $qb->select('a')
-                ->where("a.tags LIKE '%$value%'")
-            ;
+        $qb->select('a')
+            ->where("a.tags LIKE '%$value%'")
+        ;
         $query = $qb->getQuery();
         return $query->getResult();
-
     }
 
     public function findBySearch($value)
@@ -41,7 +40,6 @@ class ArticlesRepository extends ServiceEntityRepository
         ;
         $query = $qb->getQuery();
         return $query->getResult();
-
     }
 
     /*

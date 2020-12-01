@@ -23,8 +23,8 @@
             <tr>
                 <th class="tableShowHeader">Tags</th>
                 <td class="tableShowColumn">
-                    {% for tag in article.tags %}
-                        {{ tag }},
+                    {% for tag in article.getTags() %}
+                        {{ tag.getName() }},
                     {% endfor %}
                 </td>
             </tr>
