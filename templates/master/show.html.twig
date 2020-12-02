@@ -9,9 +9,9 @@
         <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="project demo image" />
         <p>{{ article.content }}</p>
         <span>Tags:
-        {% for tag in tags %}
+        {% for tag in article.tags %}
             <a href="{{ path('homepagearticles', {'category': tag.name}) }}">{{ tag.name }}</a>
-        {% endfor %}
+            {% endfor %}
         </span>
 
 

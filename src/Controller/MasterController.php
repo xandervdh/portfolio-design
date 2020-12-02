@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Articles;
+use App\Entity\Tag;
 use App\Entity\Users;
 use App\Repository\ArticlesRepository;
+use App\Repository\TagRepository;
+use PhpParser\Node\Expr\Cast\Object_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -35,89 +38,41 @@ class MasterController extends AbstractController
         ]);
     }
 
-    public function getArticles($value)
-    {
-        $em = $this->getDoctrine()->getManager();
 
-        $RAW_QUERY = 'SELECT * FROM articles JOIN articles_tag a on articles.id = a.articles_id WHERE a.tag_id =' . $value . ';';
-
-        $statement = $em->getConnection()->prepare($RAW_QUERY);
-        $statement->execute();
-
-        return $statement->fetchAll();
-    }
-
-    public function getArticle($value)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $RAW_QUERY = 'SELECT * FROM tag JOIN articles_tag a on tag.id = a.tag_id WHERE a.articles_id =' . $value . ';';
-
-        $statement = $em->getConnection()->prepare($RAW_QUERY);
-        $statement->execute();
-
-        return $statement->fetchAll();
-    }
-
-    public function getTags($value)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $RAW_QUERY = 'SELECT * FROM tag WHERE id = ' . $value . ';';
-
-        $statement = $em->getConnection()->prepare($RAW_QUERY);
-        $statement->execute();
-
-        return $statement->fetchAll();
-    }
-
-    public function getAllTags()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $RAW_QUERY = 'SELECT * FROM tag;';
-
-        $statement = $em->getConnection()->prepare($RAW_QUERY);
-        $statement->execute();
-
-        return $statement->fetchAll();
-    }
 
     /**
      * @Route("/articles/{category}", name="articles")
      */
-    public function portfolioArticles($category, ArticlesRepository $articlesRepository): Response
+    public function portfolioArticles($category, ArticlesRepository $articlesRepository, TagRepository $tagRepository): Response
     {
         $articles = [];
-        switch ($category){
+        switch ($category) {
             case "all":
-               $articles = $articlesRepository->findAll();
-               var_dump($articles);
-               $tags = $this->getAllTags();
-               break;
+                $articles = $articlesRepository->findAll();
+                break;
             case "javascript":
-                $articles = $this->getArticles(3);
-                var_dump($articles);
-                $tags = $this->getTags(3);
+                $tag = $tagRepository->find(3);
+                $articles = $tag->getArticles()->toArray();
                 break;
             case "HTML":
-                $articles = $this->getArticles(4);
-                $tags = $this->getTags(4);
+                $tag = $tagRepository->find(4);
+                $articles = $tag->getArticles()->toArray();
                 break;
             case "PHP":
-                $articles = $this->getArticles(5);
-                $tags = $this->getTags(5);
+                $tag = $tagRepository->find(5);
+                $articles = $tag->getArticles()->toArray();
                 break;
             case "bootstrap":
-                $articles = $articlesRepository->findByTag('bootstrap');
+                $tag = $tagRepository->find(6);
+                $articles = $tag->getArticles()->toArray();
                 break;
             case "symfony":
-                $articles = $articlesRepository->findByTag('symfony');
+                $tag = $tagRepository->find(7);
+                $articles = $tag->getArticles()->toArray();
                 break;
         }
         return $this->render('master/index.html.twig', [
             'articles' => $articles,
-            'tags' => $tags,
         ]);
     }
 
@@ -128,7 +83,6 @@ class MasterController extends AbstractController
     {
         return $this->render('master/show.html.twig', [
             'article' => $article,
-            'tags' => $this->getArticle($id),
         ]);
     }
 
@@ -138,7 +92,7 @@ class MasterController extends AbstractController
     public function contact(): Response
     {
         return $this->render('master/contact.html.twig', [
-           // 'controller_name' => 'contact',
+            // 'controller_name' => 'contact',
         ]);
     }
 
