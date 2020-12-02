@@ -19,7 +19,7 @@
         {% for article in articles %}
             <tr>
                 <td><a href="{{ path('articles_show', {'id': article.id}) }}">{{ article.title|capitalize }}</a></td>
-                <td>{{ article.updatedAt |date("m/d/Y") }}</td>
+                <td>{{ article.updatedAt |date("d/m/Y") }}</td>
                 <td> <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.imageName}}" /></td>
                 <td>
                     {% for tag in article.getTags() %}

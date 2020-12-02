@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container">
         <h1>{{ article.title|capitalize }}</h1>
-        <span>{{ article.updatedAt |date("m/d/Y") }}</span><br>
+        <span>{{ article.updatedAt |date("d/m/Y") }}</span><br>
         <a href="{{ article.link }}">link to project</a><br>
         <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="project demo image" />
         <p>{{ article.content }}</p>
