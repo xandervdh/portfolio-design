@@ -5,7 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     # add /public for heroku
-    app.path.article_images: /public/images/articles
+    app.path.article_images: /images/articles
 services:
     # default configuration for services in *this* file
     _defaults:
