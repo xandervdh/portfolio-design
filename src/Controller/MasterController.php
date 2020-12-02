@@ -47,11 +47,35 @@ class MasterController extends AbstractController
         return $statement->fetchAll();
     }
 
+    public function getArticle($value)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $RAW_QUERY = 'SELECT * FROM tag JOIN articles_tag a on tag.id = a.tag_id WHERE a.articles_id =' . $value . ';';
+
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
     public function getTags($value)
     {
         $em = $this->getDoctrine()->getManager();
 
         $RAW_QUERY = 'SELECT * FROM tag WHERE id = ' . $value . ';';
+
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
+    public function getAllTags()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $RAW_QUERY = 'SELECT * FROM tag;';
 
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
@@ -68,9 +92,12 @@ class MasterController extends AbstractController
         switch ($category){
             case "all":
                $articles = $articlesRepository->findAll();
+               var_dump($articles);
+               $tags = $this->getAllTags();
                break;
             case "javascript":
                 $articles = $this->getArticles(3);
+                var_dump($articles);
                 $tags = $this->getTags(3);
                 break;
             case "HTML":
@@ -97,10 +124,11 @@ class MasterController extends AbstractController
     /**
      * @Route("/article/{id}", name="article")
      */
-    public function showArticle(Articles $article): Response
+    public function showArticle(Articles $article, $id): Response
     {
         return $this->render('master/show.html.twig', [
             'article' => $article,
+            'tags' => $this->getArticle($id),
         ]);
     }
 
