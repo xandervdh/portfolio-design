@@ -21,20 +21,24 @@ class MasterController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index(TagRepository $tagRepository): Response
     {
+        $tags = $tagRepository->findAll();
         return $this->render('master/home.html.twig', [
             'controller_name' => 'home',
+            'tags' => $tags,
         ]);
     }
 
     /**
      * @Route("/about-me", name="about-me")
      */
-    public function aboutMe(): Response
+    public function aboutMe(TagRepository $tagRepository): Response
     {
+        $tags = $tagRepository->findAll();
         return $this->render('master/about.html.twig', [
             'controller_name' => 'about me',
+            'tags' => $tags,
         ]);
     }
 
@@ -45,6 +49,7 @@ class MasterController extends AbstractController
      */
     public function portfolioArticles($category, ArticlesRepository $articlesRepository, TagRepository $tagRepository): Response
     {
+        $tags = $tagRepository->findAll();
         $articles = [];
         switch ($category) {
             case "all":
@@ -73,40 +78,47 @@ class MasterController extends AbstractController
         }
         return $this->render('master/index.html.twig', [
             'articles' => $articles,
+            'tags' => $tags,
         ]);
     }
 
     /**
      * @Route("/article/{id}", name="article")
      */
-    public function showArticle(Articles $article, $id): Response
+    public function showArticle(Articles $article, TagRepository $tagRepository): Response
     {
+        $tags = $tagRepository->findAll();
         return $this->render('master/show.html.twig', [
             'article' => $article,
+            'tags' => $tags,
         ]);
     }
 
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(): Response
+    public function contact(TagRepository $tagRepository): Response
     {
+        $tags = $tagRepository->findAll();
         return $this->render('master/contact.html.twig', [
             // 'controller_name' => 'contact',
+            'tags' => $tags,
         ]);
     }
 
     /**
      * @Route("/search/", name="search", methods={"POST"})
      */
-    public function search(ArticlesRepository $repository)
+    public function search(ArticlesRepository $repository, TagRepository $tagRepository)
     {
+        $tags = $tagRepository->findAll();
         $value = $_POST['search'];
         var_dump($value);
         $result = $repository->findBySearch($value);
 
         return $this->render('master/search.html.twig', [
             'results' => $result,
+            'tags' => $tags,
         ]);
     }
 }

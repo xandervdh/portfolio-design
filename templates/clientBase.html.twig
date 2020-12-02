@@ -42,11 +42,9 @@
                         Articles
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('homepagearticles', {'category': 'javascript'}) }}">Javascript</a>
-                        <a class="dropdown-item" href="{{ path('homepagearticles', {'category': 'HTML'}) }}">HTML</a>
-                        <a class="dropdown-item" href="{{ path('homepagearticles', {'category': 'PHP'}) }}">PHP</a>
-                        <a class="dropdown-item" href="{{ path('homepagearticles', {'category': 'bootstrap'}) }}">Bootstrap</a>
-                        <a class="dropdown-item" href="{{ path('homepagearticles', {'category': 'symfony'}) }}">Symfony</a>
+                        {% for tag in tags %}
+                            <a class="dropdown-item" href="{{ path('homepagearticles', {'category': tag.getName()}) }}">{{ tag.getName() }}</a>
+                        {% endfor %}
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ path('homepagearticles', {'category': 'all'}) }}">All</a>
                     </div>
