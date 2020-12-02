@@ -20,26 +20,6 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Change yourdomain.com to be your main domain.
-    RewriteCond %{HTTP_HOST} ^(www.)?portfolioxvdh.herokuapp.com$
-
-    # Change 'subfolder' to be the folder you will use for your main domain.
-    RewriteCond %{REQUEST_URI} !^/public/
-
-    # Don't change this line.
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-
-    # Change 'subfolder' to be the folder you will use for your main domain.
-    RewriteRule ^(.*)$ /public/$1
-
-    # Change yourdomain.com to be your main domain again.
-    # Change 'subfolder' to be the folder you will use for your main domain
-    # followed by / then the main file for your site, index.php, index.html, etc.
-
-    RewriteCond %{HTTP_HOST} ^(www.)?portfolioxvdh.herokuapp.com$
-    RewriteRule ^(/)?$ public/index.php [L]
-
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper
