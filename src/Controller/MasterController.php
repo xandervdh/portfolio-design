@@ -50,25 +50,25 @@ class MasterController extends AbstractController
             case "all":
                 $articles = $articlesRepository->findAll();
                 break;
-            case "javascript":
-                $tag = $tagRepository->find(1);
-                $articles = $tag->getArticles()->toArray();
-                break;
             case "HTML":
-                $tag = $tagRepository->find(2);
-                $articles = $tag->getArticles()->toArray();
+                $tag = $tagRepository->findBy(['name' => 'HTML']);
+                $articles = $tag[0]->getArticles()->toArray();
+                break;
+            case "javascript":
+                $tag = $tagRepository->findBy(['name' => 'javascript']);
+                $articles = $tag[0]->getArticles()->toArray();
                 break;
             case "PHP":
-                $tag = $tagRepository->find(5);
-                $articles = $tag->getArticles()->toArray();
+                $tag = $tagRepository->findBy(['name' => 'PHP']);
+                $articles = $tag[0]->getArticles()->toArray();
                 break;
             case "bootstrap":
-                $tag = $tagRepository->find(6);
-                $articles = $tag->getArticles()->toArray();
+                $tag = $tagRepository->findBy(['name' => 'bootstrap']);
+                $articles = $tag[0]->getArticles()->toArray();
                 break;
             case "symfony":
-                $tag = $tagRepository->find(7);
-                $articles = $tag->getArticles()->toArray();
+                $tag = $tagRepository->findBy(['name' => 'symfony']);
+                $articles = $tag[0]->getArticles()->toArray();
                 break;
         }
         return $this->render('master/index.html.twig', [
