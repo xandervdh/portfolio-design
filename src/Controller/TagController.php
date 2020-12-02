@@ -40,7 +40,7 @@ class TagController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="tag_delete", methods={"DELETE"})
+     * @Route("/{id}/delete", name="tag_delete", methods={"GET"})
      */
     public function delete(Request $request, Tag $tag): Response
     {
