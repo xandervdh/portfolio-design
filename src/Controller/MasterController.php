@@ -51,11 +51,11 @@ class MasterController extends AbstractController
                 $articles = $articlesRepository->findAll();
                 break;
             case "javascript":
-                $tag = $tagRepository->find(3);
+                $tag = $tagRepository->find(1);
                 $articles = $tag->getArticles()->toArray();
                 break;
             case "HTML":
-                $tag = $tagRepository->find(4);
+                $tag = $tagRepository->find(2);
                 $articles = $tag->getArticles()->toArray();
                 break;
             case "PHP":
