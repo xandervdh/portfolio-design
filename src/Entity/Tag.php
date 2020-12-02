@@ -26,6 +26,7 @@ class Tag
 
     /**
      * @ORM\ManyToMany(targetEntity=Articles::class, mappedBy="tags")
+     * @ORM\OrderBy({"id" = "desc"})
      */
     private $articles;
 

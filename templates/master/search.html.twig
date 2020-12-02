@@ -6,7 +6,8 @@
     <div class="container">
         {% for result in results %}
             <div class="article">
-                <h1><a href="{{ path('homepagearticle', {'id': result.id}) }}">{{ result.title }}</a></h1>
+                <h1><a href="{{ path('homepagearticle', {'id': result.id}) }}">{{ result.title|capitalize }}</a></h1>
+                <span>{{ article.updatedAt |date("m/d/Y") }}</span><br>
                 <img src="{{ vich_uploader_asset(result, 'imageFile') }}" alt="{{ result.imageName}}" /><br>
                 Tags:
                 {% for tag in result.tags %}

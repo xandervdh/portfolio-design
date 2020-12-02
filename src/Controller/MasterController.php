@@ -26,7 +26,7 @@ class MasterController extends AbstractController
      */
     public function __construct(TagRepository $tagRepository)
     {
-        $this->tags = $tagRepository->findAll();
+        $this->tags = $tagRepository->findBy([], ['name' => 'asc']);
     }
 
 
@@ -60,7 +60,7 @@ class MasterController extends AbstractController
     public function portfolioArticles($category, TagRepository $tagRepository, ArticlesRepository $articlesRepository): Response
     {
         if ($category == 'all'){
-            $articles = $articlesRepository->findAll();
+            $articles = $articlesRepository->findBy([], ['id' => 'desc']);
         } else {
             $tags = $tagRepository->findBy(['name' => $category]);
             $articles =  $tags[0]->getArticles()->toArray();
