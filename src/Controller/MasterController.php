@@ -18,27 +18,37 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
  */
 class MasterController extends AbstractController
 {
+    private $tags;
+
+    /**
+     * MasterController constructor.
+     * @param $tags
+     */
+    public function __construct(TagRepository $tagRepository)
+    {
+        $this->tags = $tagRepository->findAll();
+    }
+
+
     /**
      * @Route("/", name="home")
      */
-    public function index(TagRepository $tagRepository): Response
+    public function index(): Response
     {
-        $tags = $tagRepository->findAll();
         return $this->render('master/home.html.twig', [
             'controller_name' => 'home',
-            'tags' => $tags,
+            'tags' => $this->tags,
         ]);
     }
 
     /**
      * @Route("/about-me", name="about-me")
      */
-    public function aboutMe(TagRepository $tagRepository): Response
+    public function aboutMe(): Response
     {
-        $tags = $tagRepository->findAll();
         return $this->render('master/about.html.twig', [
             'controller_name' => 'about me',
-            'tags' => $tags,
+            'tags' => $this->tags,
         ]);
     }
 
@@ -47,78 +57,55 @@ class MasterController extends AbstractController
     /**
      * @Route("/articles/{category}", name="articles")
      */
-    public function portfolioArticles($category, ArticlesRepository $articlesRepository, TagRepository $tagRepository): Response
+    public function portfolioArticles($category, TagRepository $tagRepository, ArticlesRepository $articlesRepository): Response
     {
-        $tags = $tagRepository->findAll();
-        $articles = [];
-        switch ($category) {
-            case "all":
-                $articles = $articlesRepository->findAll();
-                break;
-            case "HTML":
-                $tag = $tagRepository->findBy(['name' => 'HTML']);
-                $articles = $tag[0]->getArticles()->toArray();
-                break;
-            case "javascript":
-                $tag = $tagRepository->findBy(['name' => 'javascript']);
-                $articles = $tag[0]->getArticles()->toArray();
-                break;
-            case "PHP":
-                $tag = $tagRepository->findBy(['name' => 'PHP']);
-                $articles = $tag[0]->getArticles()->toArray();
-                break;
-            case "bootstrap":
-                $tag = $tagRepository->findBy(['name' => 'bootstrap']);
-                $articles = $tag[0]->getArticles()->toArray();
-                break;
-            case "symfony":
-                $tag = $tagRepository->findBy(['name' => 'symfony']);
-                $articles = $tag[0]->getArticles()->toArray();
-                break;
+        if ($category == 'all'){
+            $articles = $articlesRepository->findAll();
+        } else {
+            $tags = $tagRepository->findBy(['name' => $category]);
+            $articles =  $tags[0]->getArticles()->toArray();
         }
+
         return $this->render('master/index.html.twig', [
             'articles' => $articles,
-            'tags' => $tags,
+            'tags' => $this->tags,
         ]);
     }
 
     /**
      * @Route("/article/{id}", name="article")
      */
-    public function showArticle(Articles $article, TagRepository $tagRepository): Response
+    public function showArticle(Articles $article): Response
     {
-        $tags = $tagRepository->findAll();
         return $this->render('master/show.html.twig', [
             'article' => $article,
-            'tags' => $tags,
+            'tags' => $this->tags,
         ]);
     }
 
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(TagRepository $tagRepository): Response
+    public function contact(): Response
     {
-        $tags = $tagRepository->findAll();
         return $this->render('master/contact.html.twig', [
             // 'controller_name' => 'contact',
-            'tags' => $tags,
+            'tags' => $this->tags,
         ]);
     }
 
     /**
      * @Route("/search/", name="search", methods={"POST"})
      */
-    public function search(ArticlesRepository $repository, TagRepository $tagRepository)
+    public function search(ArticlesRepository $repository)
     {
-        $tags = $tagRepository->findAll();
         $value = $_POST['search'];
         var_dump($value);
         $result = $repository->findBySearch($value);
 
         return $this->render('master/search.html.twig', [
             'results' => $result,
-            'tags' => $tags,
+            'tags' => $this->tags,
         ]);
     }
 }
