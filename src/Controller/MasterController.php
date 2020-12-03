@@ -100,7 +100,6 @@ class MasterController extends AbstractController
     public function search(ArticlesRepository $repository)
     {
         $value = $_POST['search'];
-        var_dump($value);
         $result = $repository->findBySearch($value);
 
         return $this->render('master/search.html.twig', [
