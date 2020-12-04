@@ -79,20 +79,10 @@
             });
 
             viewSelector.on('change', function(ids) {
-                let newIds = {
-                    query: {
-                        ids: ids
-                    }
-                }
-                timeline.set(newIds).execute();
+                    timeline.set(newIds).execute();
             });
 
             viewSelector.on('change', function(ids) {
-                let newIds = {
-                    query: {
-                        ids: ids
-                    }
-                }
                 pageView.set(newIds).execute();
             });
         });
