@@ -103,12 +103,14 @@ img {
 }
 
 #error a {
-    color: blue;
+    color: red;
+    text-decoration-line: underline;
 }
 
 #error h1 {
     margin-top: 20px;
     font-size: 8vh;
+    font-weight: 700;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -121,6 +123,6 @@ img {
 
     #error p {
         width: 90%;
-        margin: 70vh auto 0 auto;
+        margin: 60vh auto 0 auto;
     }
 }
