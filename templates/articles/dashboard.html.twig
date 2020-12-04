@@ -62,11 +62,9 @@
                 reportType: 'ga',
                 query: {
                     'dimensions': 'ga:pageTitle',
-                    'metrics': 'ga:pageviews',
-                    'segment': 'gaid::-1',
-                    'sort': '-ga:pageviews',
-                    'filters': 'ga:pagePath!=/',
-                    'max-results': '10'
+                    'metrics': 'ga:pageViews',
+                    'start-date': '7daysAgo',
+                    'end-date': 'today',
                 },
                 chart: {
                     type: 'TABLE',
