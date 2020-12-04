@@ -8,13 +8,13 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-183904782-1', {
-            'page_title' : 'Article',
+            'page_title' : '{{ article.title|capitalize }}',
             'page_path': '{{ path(app.request.attributes.get('_route'),
                 app.request.attributes.get('_route_params')) }}'
         });
     </script>
 {% endblock %}
-{% block title %}Article{% endblock %}
+{% block title %}{{ article.title|capitalize }}{% endblock %}
 
 {% block body %}
     <div class="container">

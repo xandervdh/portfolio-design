@@ -69,6 +69,7 @@ class MasterController extends AbstractController
         return $this->render('master/index.html.twig', [
             'articles' => $articles,
             'tags' => $this->tags,
+            'title' => $category
         ]);
     }
 
