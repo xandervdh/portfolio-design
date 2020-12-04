@@ -61,14 +61,16 @@
             let pageView = new gapi.analytics.googleCharts.DataChart({
                 reportType: 'ga',
                 query: {
-                    'dimensions': 'ga:pageTitle ga:date',
-                    'metrics': 'ga:uniquePageviews',
-                    'start-date': '7daysAgo',
-                    'end-date': 'today',
+                    'dimensions': 'ga:pageTitle',
+                    'metrics': 'ga:pageviews',
+                    'segment': 'gaid::-1',
+                    'sort': '-ga:pageviews',
+                    'filters': 'ga:pagePath!=/',
+                    'max-results': '10'
                 },
                 chart: {
                     type: 'TABLE',
-                    container: 'page-titles',
+                    container: 'pageView',
                     options: {
                         title: 'Top Pageviews',
                         width: '100%'
