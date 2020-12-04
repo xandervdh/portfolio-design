@@ -127,3 +127,13 @@ img {
         margin: 60vh auto 0 auto;
     }
 }
+
+#view-selector table {
+    width: 33%;
+    float: left;
+}
+
+#timeline, #pageView {
+    width: 33%;
+    float: left;
+}
