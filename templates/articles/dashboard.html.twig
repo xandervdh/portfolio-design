@@ -28,7 +28,7 @@
 
             // Step 3: Authorize the user.
 
-            var CLIENT_ID = '390414015402-96selc4iribt5a2l46nb1rd4fgimmvm0.apps.googleusercontent.com';
+            let CLIENT_ID = '390414015402-96selc4iribt5a2l46nb1rd4fgimmvm0.apps.googleusercontent.com';
 
             gapi.analytics.auth.authorize({
                 container: 'auth-button',
@@ -37,13 +37,13 @@
 
             // Step 4: Create the view selector.
 
-            var viewSelector = new gapi.analytics.ViewSelector({
+            let viewSelector = new gapi.analytics.ViewSelector({
                 container: 'view-selector'
             });
 
             // Step 5: Create the timeline chart.
 
-            var timeline = new gapi.analytics.googleCharts.DataChart({
+            let timeline = new gapi.analytics.googleCharts.DataChart({
                 reportType: 'ga',
                 query: {
                     'dimensions': 'ga:date',
@@ -64,7 +64,7 @@
             });
 
             viewSelector.on('change', function(ids) {
-                var newIds = {
+                let newIds = {
                     query: {
                         ids: ids
                     }
@@ -73,5 +73,6 @@
             });
         });
     </script>
+
 
 {% endblock %}
