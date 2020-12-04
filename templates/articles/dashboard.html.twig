@@ -67,9 +67,12 @@
                     'end-date': 'today',
                 },
                 chart: {
-                    type: 'LINE',
-                    container: 'pageView'
-                }
+                    type: 'TABLE',
+                    container: 'page-titles',
+                    options: {
+                        title: 'Top Pageviews',
+                        width: '100%'
+                    }
             });
 
             // Step 6: Hook up the components to work together.
@@ -79,10 +82,20 @@
             });
 
             viewSelector.on('change', function(ids) {
-                    timeline.set(newIds).execute();
+                let newIds = {
+                    query: {
+                        ids: ids
+                    }
+                }
+                timeline.set(newIds).execute();
             });
 
             viewSelector.on('change', function(ids) {
+                let newIds = {
+                    query: {
+                        ids: ids
+                    }
+                }
                 pageView.set(newIds).execute();
             });
         });
