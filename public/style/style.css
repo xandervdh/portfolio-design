@@ -139,5 +139,9 @@ img {
 }
 
 .logo {
-    width: 3vw;
+    width: 60px;
+}
+
+.menu {
+    background-color: #FFF;
 }
