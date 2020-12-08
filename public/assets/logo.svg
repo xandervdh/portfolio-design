@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Laag_2"
+   data-name="Laag 2"
+   viewBox="0 0 400.92 416.69"
+   version="1.1"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview15"
+     showgrid="false"
+     inkscape:zoom="0.56636828"
+     inkscape:cx="200.46001"
+     inkscape:cy="208.345"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="text12" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1,.cls-2{fill:#f7931e;}.cls-2{font-size:73px;font-family:Orbitron-Black, Orbitron;font-weight:800;}</style>
+  </defs>
+  <title
+     id="title6">logo</title>
+  <polygon
+     class="cls-1"
+     points="172.29 211.79 89.25 294.83 31.17 236.75 42.71 225.21 27.29 209.79 15.75 221.33 15.67 221.25 0.25 236.67 0.33 236.75 0.29 236.79 15.71 252.21 15.75 252.17 73.83 310.25 73.79 310.29 89.21 325.71 89.25 325.67 89.29 325.71 104.71 310.29 104.67 310.25 187.71 227.21 172.29 211.79"
+     id="polygon8" />
+  <path
+     class="cls-1"
+     d="M835.22,557l.21-.21-37-37,36.29-36.29-.5-.5.21-.21-88.5-88.5L635,505.37,523.43,393.79l-88.92,88.92,73.59,73.58-21.59,21.58-21.08-21.08,11.29-11.29L461.3,530.08l-26.79,26.63,89,89,.21-.21,61-61L569.3,569.08l-45.79,45.79-21.58-21.58,36.79-36.79.21-.21-36.5-36.5L524,498.21l221.5,221.5L835.22,630l.21-.21-36.5-36.5ZM746,425.21l58.09,58.08L783,504.37l-36.58-36.58L731,483.21l.09.08L672,542.37l-21.58-21.58Zm-.5,263.66L523.93,467.29l-15.42,15.42.09.08L487,504.37l-21.58-21.58,58.08-58.08L745,646.21l.21-.21,15.21-15.21,13.29-13.29L758.3,602.08,745,615.37l-57.58-57.58,59.08-59.08,58.09,58.08-21.09,21.08-21.58-21.58,11.79-11.79L758.3,529.08,731,556.21l73.59,73.58Z"
+     transform="translate(-434.51 -393.79)"
+     id="path10" />
+  <g
+     aria-label="XVDH"
+     transform="translate(72.6 398.95)"
+     style="font-weight:800;font-size:73px;font-family:Orbitron-Black, Orbitron;fill:#f7931e;fill-opacity:1"
+     id="text12">
+    <path
+       d="M 36.357422,-27.161133 54.821289,0 H 40.527832 L 28.087891,-18.178711 15.754883,0 H 1.3901367 L 19.854004,-27.161133 2.1030273,-53.217285 H 16.432129 l 11.655762,17.145019 11.620117,-17.145019 h 14.40039 z"
+       style="font-weight:800;font-size:73px;font-family:Orbitron-Black, Orbitron;fill:#f7931e;fill-opacity:1"
+       id="path832" />
+    <path
+       d="m 56.63916,-53.217285 h 13.794434 l 14.115234,39.280273 14.07959,-39.280273 H 112.42285 L 92.711426,0 h -16.36084 z"
+       style="font-weight:800;font-size:73px;font-family:Orbitron-Black, Orbitron;fill:#f7931e;fill-opacity:1"
+       id="path834" />
+    <path
+       d="m 133.20361,-42.844727 v 32.472168 h 4.91895 q 8.41211,0 12.83203,-4.17041 4.45557,-4.17041 4.45557,-12.11914 0,-7.913086 -4.41993,-12.047852 -4.41992,-4.134766 -12.86767,-4.134766 z m -13.72314,-10.372558 h 14.47168 q 12.11914,0 18.03613,1.746582 5.95264,1.710937 10.19434,5.845703 3.74267,3.600098 5.56054,8.305176 1.81788,4.705078 1.81788,10.657715 0,6.023925 -1.81788,10.764648 -1.81787,4.705078 -5.56054,8.3051758 -4.27735,4.1347657 -10.26563,5.8813477 Q 145.92871,0 133.95215,0 h -14.47168 z"
+       style="font-weight:800;font-size:73px;font-family:Orbitron-Black, Orbitron;fill:#f7931e;fill-opacity:1"
+       id="path836" />
+    <path
+       d="m 180.07617,-53.217285 h 13.72315 v 20.281738 h 20.24609 v -20.281738 h 13.72314 V 0 H 214.04541 V -22.562988 H 193.79932 V 0 h -13.72315 z"
+       style="font-weight:800;font-size:73px;font-family:Orbitron-Black, Orbitron;fill:#f7931e;fill-opacity:1"
+       id="path838" />
+  </g>
+</svg>
