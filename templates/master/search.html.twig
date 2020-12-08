@@ -1,5 +1,6 @@
 {% extends 'clientBase.html.twig' %}
 {% block analytics %}
+    {% if chcookieconsent_isCategoryAllowedByUser('analytics') == true %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-183904782-1"></script>
     <script>
@@ -12,6 +13,7 @@
             'page_path': '/about-me'
         });
     </script>
+    {% endif %}
 {% endblock %}
 {% block title %}Search results{% endblock %}
 
