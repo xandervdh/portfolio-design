@@ -66,7 +66,7 @@
 {% block footer %}
     {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set')) }}
     <div class="footer">
-        &copy; Xander Van der Herten and Cis Magito
+        &copy; {{ 'now'|date('Y')}} Xander Van der Herten and Cis Magito
     </div>
 {% endblock %}
 </body>
