@@ -1,11 +1,13 @@
-html, body {
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #FEDCC8;
+    background-size: cover;
+    margin-top: 40px;
 }
 
 .container {
-    margin-top: 60px;
     flex: 1;
 }
 
@@ -15,6 +17,8 @@ html, body {
     font-size: smaller;
     text-transform: capitalize;
     color: grey;
+    background-color: #2D112B;
+    z-index: 3;
 }
 
 .article {
@@ -146,52 +150,55 @@ img {
     background-color: #FFF;
 }
 
-*{
-    box-sizing: border-box;
+.layer{
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    margin-top: 160px;
+    margin-left: -500px;
 }
 
-html,
-body{
-    background-color: #FEDCC8;
+#layer0{
+    background: url(/assets/parallax/0.png)no-repeat;
+}
+
+#layer1{
+    background: url(/assets/parallax/1.png)no-repeat;
+}
+
+#layer2{
+    background: url(/assets/parallax/2.png)no-repeat;
+}
+
+#layer3{
+    background: url(/assets/parallax/3.png)no-repeat;
+}
+
+#layer4{
+    background: url(/assets/parallax/4.png)no-repeat;
+}
+
+#layer5{
+    background: url(/assets/parallax/5.png)no-repeat;
+}
+
+#layer6{
+    background: url(/assets/parallax/6.png)no-repeat;
+}
+
+#parallax_cover {
+    background-color: #2D112B;
+    margin-top: 600px;
+    height: 100%;
+    width: 200%;
+    position: fixed;
+    margin-left: -500px;
+    top: 0;
+    left: 0;
 }
 
 .parallax {
-    perspective: 100px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 0;
-    bottom: 0;
-    margin-left: -1000px;
+    height: 200%;
 }
-
-.parallax__layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.parallax img{
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-
-.parallax__cover{
-    background: #2D112B;
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 2000px;
-    z-index: 2;
-}
-

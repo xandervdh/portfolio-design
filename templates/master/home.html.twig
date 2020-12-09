@@ -19,27 +19,51 @@
 
 {% block body %}
     <div class="parallax">
-        <div class="parallax__layer parallax__layer__0">
-            <img src="/assets/parallax/0.png" />
-        </div>
-        <div class="parallax__layer parallax__layer__1">
-            <img src="/assets/parallax/1.png" />
-        </div>
-        <div class="parallax__layer parallax__layer__2">
-            <img src="/assets/parallax/2.png" />
-        </div>
-        <div class="parallax__layer parallax__layer__3">
-            <img src="/assets/parallax/3.png" />
-        </div>
-        <div class="parallax__layer parallax__layer__4">
-            <img src="/assets/parallax/4.png" />
-        </div>
-        <div class="parallax__layer parallax__layer__5">
-            <img src="/assets/parallax/5.png" />
-        </div>
-        <div class="parallax__layer parallax__layer__6">
-            <img src="/assets/parallax/6.png" />
-        </div>
-        <div class="parallax__cover"></div>
+        <div id="layer0" class="layer"></div>
+        <div id="layer1" class="layer"></div>
+        <div id="layer2" class="layer"></div>
+        <div id="layer3" class="layer"></div>
+        <div id="layer4" class="layer"></div>
+        <div id="layer5" class="layer"></div>
+        <div id="layer6" class="layer"></div>
+        <div id="parallax_cover"></div>
     </div>
+    <div style="height: 500px; color: white; margin-top: 700px; z-index: 2">
+        hello
+    </div>
+    <script>
+
+        // Create cross browser requestAnimationFrame method:
+        window.requestAnimationFrame = window.requestAnimationFrame
+            || window.mozRequestAnimationFrame
+            || window.webkitRequestAnimationFrame
+            || window.msRequestAnimationFrame
+            || function(f){setTimeout(f, 1000/60)}
+
+        var layer0 = document.getElementById('layer0')
+        var layer1 = document.getElementById('layer1')
+        var layer2 = document.getElementById('layer2')
+        var layer3 = document.getElementById('layer3')
+        var layer4 = document.getElementById('layer4')
+        var layer5 = document.getElementById('layer5')
+        var layer6 = document.getElementById('layer6')
+        var parallax_cover = document.getElementById('parallax_cover')
+
+        function parallaxbubbles(){
+            var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
+            layer0.style.top = -scrolltop * .1 + 'px' // move bubble1 at 20% of scroll rate
+            layer1.style.top = -scrolltop * .2 + 'px' // move bubble2 at 50% of scroll rate
+            layer2.style.top = -scrolltop * .3 + 'px' // move bubble2 at 50% of scroll rate
+            layer3.style.top = -scrolltop * .4 + 'px' // move bubble2 at 50% of scroll rate
+            layer4.style.top = -scrolltop * .6 + 'px' // move bubble2 at 50% of scroll rate
+            layer5.style.top = -scrolltop * .8 + 'px' // move bubble2 at 50% of scroll rate
+            layer6.style.top = -scrolltop + 'px' // move bubble2 at 50% of scroll rate
+            parallax_cover.style.top = -scrolltop + 'px' // move bubble2 at 50% of scroll rate
+        }
+
+        window.addEventListener('scroll', function(){ // on page scroll
+            requestAnimationFrame(parallaxbubbles) // call parallaxbubbles() on next available screen paint
+        }, false)
+
+    </script>
 {% endblock %}
