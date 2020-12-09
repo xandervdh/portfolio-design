@@ -156,8 +156,8 @@ img {
     top: 0;
     left: 0;
     position: fixed;
-    margin-top: 160px;
-    margin-left: -500px;
+    margin-top: 55vh;
+    margin-left: -30vw;
 }
 
 #layer0{
@@ -190,8 +190,8 @@ img {
 
 #parallax_cover {
     background-color: #2D112B;
-    margin-top: 600px;
-    height: 150%;
+    margin-top: 100vh;
+    height: 200%;
     width: 200%;
     position: fixed;
     margin-left: -500px;
@@ -204,9 +204,9 @@ img {
 }
 
 #wrapper {
-    margin-top: 570px;
+    margin-top: 100vh;
     background-color: #2D112B;
     color: white;
     z-index: 2;
-    height: 1000px;
+    height: 200%;
 }
