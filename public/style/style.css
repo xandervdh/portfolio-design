@@ -1,8 +1,8 @@
 body {
     display: flex;
-    min-height: 100vh;
+    min-height: 90vh;
     flex-direction: column;
-    background-color: #FEDCC8;
+    background-color: #2D112B;
     margin-top: 40px;
 }
 
@@ -27,14 +27,16 @@ body {
 
 #map {
     width: 50%;
-    height: 85vh;
+    height: 80vh;
     float: left;
 }
 
 #info {
     width: 50%;
     float: left;
-    height: 85vh;
+    height: 80vh;
+    color: #FEDCC8;
+    padding-left: 1vw;
 }
 
 /*MASTER HOME.HTML */
@@ -82,7 +84,7 @@ body {
 /* SHOW.HTML TABLE*/
 
 .editButtonShow,
-.editButtonShow:visited,
+.editButtonShow:visited,>
 .editButtonShow:hover {
     color: #f1f2f3;
     text-decoration: none;
@@ -136,8 +138,23 @@ body {
     width: 60px;
 }
 
-.menu {
-    /*background-color: #FFF;*/
+.change {
+    --ease: all 300ms ease;
+
+    color: #FEDCC8;
+    transition: var(--ease);
+}
+
+.change.fade-in {
+    color: black;
+}
+
+.nav-link:hover {
+    color: #F79626;
+}
+
+.dropdown-item {
+    color: #2D112B;
 }
 
 .layer{
@@ -194,6 +211,14 @@ body {
     left: 0;
 }
 
+.parallax {
+    background-color: #FEDCC8;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    margin-top: -40px;
+}
+
 #wrapper {
     margin-top: 100vh;
     background-color: #2D112B;
@@ -201,4 +226,8 @@ body {
     z-index: 2;
     height: 100%;
     padding-top: 50px;
+}
+
+.articles {
+    margin: 60px 0;
 }

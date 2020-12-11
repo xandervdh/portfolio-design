@@ -14,7 +14,7 @@
 </head>
 <body>
 {% block menu %}
-    <nav class="fixed-top navbar navbar-expand-lg navbar-light menu">
+    <nav class="fixed-top navbar navbar-expand-lg">
         <a class="navbar-brand" href="{{ path('homepagehome') }}"><img class="logo" src="/assets/logo.svg" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,10 +24,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('homepageabout-me') }}">About me</a>
+                    <a class="nav-link change" href="{{ path('homepageabout-me') }}">About me</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle change" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Articles
                     </a>
@@ -40,7 +40,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('homepagecontact') }}">Contact</a>
+                    <a class="nav-link change" href="{{ path('homepagecontact') }}">Contact</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" method="post" action="{{ path('homepagesearch') }}">
