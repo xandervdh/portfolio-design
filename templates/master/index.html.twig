@@ -19,7 +19,7 @@
 {% block title %}{{ title|capitalize }} articles{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="containers">
         {% for article in articles %}
             <div class="article">
                 <h1><a href="{{ path('homepagearticle', {'id': article.id}) }}">{{ article.title|capitalize }}</a></h1>

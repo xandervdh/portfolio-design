@@ -1,20 +1,23 @@
-    // Create cross browser requestAnimationFrame method:
-    window.requestAnimationFrame = window.requestAnimationFrame
+// Create cross browser requestAnimationFrame method:
+window.requestAnimationFrame = window.requestAnimationFrame
     || window.mozRequestAnimationFrame
     || window.webkitRequestAnimationFrame
     || window.msRequestAnimationFrame
-    || function(f){setTimeout(f, 1000/60)}
+    || function (f) {
+        setTimeout(f, 1000 / 60)
+    }
 
-    var layer0 = document.getElementById('layer0')
-    var layer1 = document.getElementById('layer1')
-    var layer2 = document.getElementById('layer2')
-    var layer3 = document.getElementById('layer3')
-    var layer4 = document.getElementById('layer4')
-    var layer5 = document.getElementById('layer5')
-    var layer6 = document.getElementById('layer6')
-    var parallax_cover = document.getElementById('parallax_cover')
+var layer0 = document.getElementById('layer0')
+var layer1 = document.getElementById('layer1')
+var layer2 = document.getElementById('layer2')
+var layer3 = document.getElementById('layer3')
+var layer4 = document.getElementById('layer4')
+var layer5 = document.getElementById('layer5')
+var layer6 = document.getElementById('layer6')
+var parallax_cover = document.getElementById('parallax_cover')
+var wrapper = document.getElementById('wrapper')
 
-    function parallaxbubbles(){
+function parallaxbubbles() {
     var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
     layer0.style.top = -scrolltop * .1 + 'px' // move bubble1 at 20% of scroll rate
     layer1.style.top = -scrolltop * .2 + 'px' // move bubble2 at 50% of scroll rate
@@ -26,6 +29,6 @@
     parallax_cover.style.top = -scrolltop + 'px' // move bubble2 at 50% of scroll rate
 }
 
-    window.addEventListener('scroll', function(){ // on page scroll
-    requestAnimationFrame(parallaxbubbles) // call parallaxbubbles() on next available screen paint
+window.addEventListener('scroll', function () { // on page scroll
+    requestAnimationFrame(parallaxbubbles)
 }, false)

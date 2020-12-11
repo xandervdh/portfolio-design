@@ -18,7 +18,7 @@
 {% block title %}Search results{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="containers">
         {% for result in results %}
             <div class="article">
                 <h1><a href="{{ path('homepagearticle', {'id': result.id}) }}">{{ result.title|capitalize }}</a></h1>

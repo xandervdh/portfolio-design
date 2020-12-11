@@ -19,7 +19,7 @@
 {% block title %}{{ article.title|capitalize }}{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="containers">
         <h1>{{ article.title|capitalize }}</h1>
         <span>{{ article.updatedAt |date("d/m/Y") }}</span><br>
         <a href="{{ article.link }}">link to project</a><br>
