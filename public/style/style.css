@@ -9,6 +9,27 @@ body {
 .containers {
     margin-top: 60px;
     flex: 1;
+    color: #FEDCC8;
+}
+
+.containers a{
+    color: #F79626;
+}
+
+.containers a:hover{
+    color: #FF6C40;
+    text-decoration: none;
+}
+
+.search {
+    border-color: #FEDCC8;
+    color: #FEDCC8;
+}
+
+.search:hover {
+    border-color: #F79626;
+    color: #F79626;
+    background-color: #2D112B;
 }
 
 .footer {
@@ -19,6 +40,11 @@ body {
     color: grey;
     background-color: #2D112B;
     z-index: 3;
+}
+
+.article_image{
+    width: 500px;
+    height: auto;
 }
 
 .article {
@@ -149,7 +175,7 @@ body {
     color: black;
 }
 
-.nav-link:hover {
+.change:hover {
     color: #F79626;
 }
 
