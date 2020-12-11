@@ -1,7 +1,8 @@
 let scrollpos = window.scrollY
 const header = document.querySelectorAll(".change")
-const screen = document.querySelector(".parallax").offsetHeight
-const height = screen * .7
+const screen = document.querySelector(".parallax")
+const height = screen.offsetHeight - 300
+console.log(height)
 for (let i = 0; i < header.length; i++){
     header[i].classList.add("fade-in")
 }
