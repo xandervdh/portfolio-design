@@ -15,7 +15,7 @@ var layer4 = document.getElementById('layer4')
 var layer5 = document.getElementById('layer5')
 var layer6 = document.getElementById('layer6')
 var parallax_cover = document.getElementById('parallax_cover')
-var wrapper = document.getElementById('wrapper')
+var logo = document.getElementById('logo')
 
 function parallaxbubbles() {
     var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
@@ -24,6 +24,7 @@ function parallaxbubbles() {
     layer2.style.top = -scrolltop * .3 + 'px' // move bubble2 at 50% of scroll rate
     layer3.style.top = -scrolltop * .4 + 'px' // move bubble2 at 50% of scroll rate
     layer4.style.top = -scrolltop * .6 + 'px' // move bubble2 at 50% of scroll rate
+    logo.style.top= -scrolltop * -.05 + 'px'
     layer5.style.top = -scrolltop * .8 + 'px' // move bubble2 at 50% of scroll rate
     layer6.style.top = -scrolltop + 'px' // move bubble2 at 50% of scroll rate
     parallax_cover.style.top = -scrolltop + 'px' // move bubble2 at 50% of scroll rate

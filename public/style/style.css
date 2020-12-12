@@ -22,14 +22,22 @@ body {
 }
 
 .search {
+    --ease: all 300ms ease;
+
     border-color: #FEDCC8;
     color: #FEDCC8;
+    transition: var(--ease);
+}
+
+.search.fade-in {
+    border-color: #2D112B;
+    color: #2D112B;
 }
 
 .search:hover {
     border-color: #F79626;
     color: #F79626;
-    background-color: #2D112B;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .footer {
@@ -173,6 +181,10 @@ body {
     width: 60px;
 }
 
+.logo.hide {
+    display: none;
+}
+
 .change {
     --ease: all 300ms ease;
 
@@ -192,6 +204,12 @@ body {
     color: #2D112B;
 }
 
+#logo img{
+    width: 20vw;
+    margin-left: 40vw;
+    margin-top: 5vh;
+}
+
 .layer{
     width: 200%;
     height: 100%;
@@ -201,38 +219,8 @@ body {
     margin-top: 5vh;
 }
 
-#layer0 img{
+.layer img{
     /*background: url(/assets/parallax/matterhorn0.png) no-repeat;*/
-    width: 100vw;
-}
-
-#layer1 img{
-    /*background: url(/assets/parallax/matterhorn1.png)no-repeat;*/
-    width: 100vw;
-}
-
-#layer2 img{
-    /*background: url(/assets/parallax/matterhorn2.png)no-repeat;*/
-    width: 100vw;
-}
-
-#layer3 img{
-    /*background: url(/assets/parallax/matterhorn3.png)no-repeat;*/
-    width: 100vw;
-}
-
-#layer4 img{
-    /*background: url(/assets/parallax/matterhorn4.png)no-repeat;*/
-    width: 100vw;
-}
-
-#layer5 img{
-    /*background: url(/assets/parallax/matterhorn5.png)no-repeat;*/
-    width: 100vw;
-}
-
-#layer6 img{
-    /*background: url(/assets/parallax/matterhorn6.png)no-repeat;*/
     width: 100vw;
 }
 
