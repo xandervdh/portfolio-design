@@ -13,7 +13,7 @@ body {
 }
 
 .containers a{
-    color: #F79626;
+    color: #FD9862;
 }
 
 .containers a:hover{
@@ -35,8 +35,8 @@ body {
 }
 
 .search:hover {
-    border-color: #F79626;
-    color: #F79626;
+    border-color: #FD9862;
+    color: #FD9862;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -178,11 +178,16 @@ body {
 }
 
 .logo {
-    width: 60px;
+    height: 60px;
 }
 
 .logo.hide {
     display: none;
+}
+
+.navbar {
+    height: 60px;
+    margin-top: 20px;
 }
 
 .change {
@@ -197,7 +202,7 @@ body {
 }
 
 .change:hover {
-    color: #F79626;
+    color: #FD9862;
 }
 
 .dropdown-item {
