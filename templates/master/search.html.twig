@@ -18,17 +18,17 @@
 {% block title %}Search results{% endblock %}
 
 {% block body %}
-    <div class="containers">
+    <div class="containers articles row">
         {% for result in results %}
-            <div class="article">
+            <div class="article col-3">
                 <h1><a href="{{ path('homepagearticle', {'id': result.id}) }}">{{ result.title|capitalize }}</a></h1>
                 <span>{{ result.updatedAt |date("d/m/Y") }}</span><br>
-                <img src="{{ vich_uploader_asset(result,'imageFile') }}" alt="project demo image" /><br>
+{#                <img src="{{ vich_uploader_asset(result,'imageFile') }}" alt="project demo image" /><br>#}
+                <a href="{{ path('homepagearticle', {'id': result.id}) }}"><img class="article_image" src="/assets/icon.png" alt="project demo image" /></a><br>
                 Tags:
                 {% for tag in result.tags %}
                     <a href="{{ path('homepagearticles', {'category': tag.name}) }}">{{ tag.name }}</a>
                 {% endfor %}
-                <hr>
             </div>
         {% else %}
             <span>no records found</span>
