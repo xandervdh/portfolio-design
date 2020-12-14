@@ -119,6 +119,10 @@ tbody, thead {
     background-color: white;
 }
 
+.containerz tbody, .containerz thead{
+    color: black;
+}
+
 /* SHOW.HTML TABLE*/
 
 .editButtonShow,
