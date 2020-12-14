@@ -385,12 +385,16 @@ body {
     }
 
     .image img {
-        width: 100vw;
+        width: 100%;
     }
 
     .text {
         width: 60vw;
         padding-left: 10vw;
+    }
+
+    .solo_article {
+        margin: 0;
     }
 }
 
