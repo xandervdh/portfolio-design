@@ -1,24 +1,38 @@
 {% extends 'clientBase.html.twig' %}
 {% block analytics %}
     {% if chcookieconsent_isCategoryAllowedByUser('analytics') == true %}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-183904782-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-183904782-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-183904782-1', {
-            'page_title' : 'About me',
-            'page_path': '/about-me'
-        });
-    </script>
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'UA-183904782-1', {
+                'page_title': 'About me',
+                'page_path': '/about-me'
+            });
+        </script>
     {% endif %}
 {% endblock %}
 {% block title %}About me{% endblock %}
 
 {% block body %}
-<div class="containers">
-    <h1>Hello {{ controller_name }}!</h1>
-</div>
+    <div class="containers aboutMe">
+        <div id="profilePic">
+            <img src="/assets/IMG_0062.JPG" alt="">
+        </div>
+        <div id="aboutText">
+            Hey there,<br><br>
+            my name is Xander A junior web developer at Becode and this is my portfolio site
+            I build this from scratch with Symfony 5. This site also has a backend connected with a database where
+            I can add new projects and they are automatically added in the projects page.
+            In my free time I like to play some games or hang out with friends (witch is not possible at the moment).
+            Feel free to look around and get in contact with me if you want more information.
+        </div>
+    </div>
 {% endblock %}
