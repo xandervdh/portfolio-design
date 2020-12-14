@@ -20,13 +20,14 @@
 
 {% block body %}
     <div class="containers solo_article row">
-        <div class="col-6">
-{#            <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="project demo image" />#}
-            <img src="/assets/logo.png" alt="project demo image" />
+        <div id="header">
+            <h1>{{ article.title|capitalize }}</h1>
+        </div>
+        <div class="col-12 col-lg-6 image">
+            <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="project demo image" />
         </span>
         </div>
-        <div class="col-6 text">
-            <h1>{{ article.title|capitalize }}</h1>
+        <div class="col-12 col-lg-6 text">
             <span>Date updoaded: {{ article.updatedAt |date("d/m/Y") }}</span><br>
             <a href="{{ article.link }}">link to project</a><br>
             <p>{{ article.content }}</p>
@@ -34,6 +35,7 @@
         {% for tag in article.tags %}
             <a href="{{ path('homepagearticles', {'category': tag.name}) }}">{{ tag.name }}</a>
         {% endfor %}
+            </span>
         </div>
     </div>
 {% endblock %}
