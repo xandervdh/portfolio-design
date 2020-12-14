@@ -29,15 +29,14 @@ class ArticlesRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
-    /*
-    public function findOneBySomeField($value): ?Articles
+
+    public function findLast(): ?Articles
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(1)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getOneOrNullResult();
         ;
     }
-    */
 }

@@ -32,8 +32,20 @@
     </div>
     <div id="wrapper">
         <div id="intro">
-            Welcome to my site
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h2>Welcome to my portfolio, feel free to look around and contact me if you want more information.</h2>
+        </div><br><br>
+
+        <div id="latest">
+            <h2>my latest project</h2><br>
+            <h1><a href="{{ path('homepagearticle', {'id': last.id}) }}">{{ last.title|capitalize }}</a></h1><br>
+{#            <img class="article_image" src="{{ vich_uploader_asset(article,'imageFile') }}" alt="project demo image" /><br>#}
+            <a href="{{ path('homepagearticle', {'id': last.id}) }}"><img class="article_image" src="/assets/icon.png" alt="project demo image" /></a><br>
+            <br><span>Date updoaded: {{ last.updatedAt |date("d/m/Y") }}</span><br>
+            <span>Tags:
+        {% for tag in last.tags %}
+            <a href="{{ path('homepagearticles', {'category': tag.name}) }}">{{ tag.name }}</a>
+        {% endfor %}
+            </span>
         </div>
     </div>
     <script src="/js/parallax.js"></script>

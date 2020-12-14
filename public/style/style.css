@@ -265,7 +265,11 @@ body {
     color: white;
     z-index: 2;
     height: 100%;
-    padding-top: 50px;
+    padding: 50px;
+}
+
+#intro {
+    text-align: center;
 }
 
 .articles {
@@ -277,6 +281,19 @@ body {
     width: 80vw;
     margin-left: 10vw;
     background-color: #560031;
+}
+
+#latest {
+    width: 60%;
+    margin-left: 35%;
+}
+
+#latest a {
+    color: #FD9862;
+}
+
+#latest a:hover {
+    color: #FF6C40;
 }
 
 #profilePic {

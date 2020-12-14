@@ -33,11 +33,14 @@ class MasterController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index(ArticlesRepository $repository): Response
     {
+        $latest = $repository->findLast();
+
         return $this->render('master/home.html.twig', [
             'controller_name' => 'home',
             'tags' => $this->tags,
+            'last' => $latest,
         ]);
     }
 
