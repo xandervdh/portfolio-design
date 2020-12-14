@@ -14,8 +14,9 @@
 </head>
 <body>
 {% block menu %}
-    <nav class="fixed-top navbar navbar-expand-lg">
-        <a class="navbar-brand" href="{{ path('homepagehome') }}"><img class="logo" src="/assets/logo.png" alt="logo"></a>
+    <nav class="fixed-top navbar  navbar-expand-lg">
+        <a class="navbar-brand" href="{{ path('homepagehome') }}"><img class="logo" src="/assets/logo.png"
+                                                                       alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,11 +27,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle change" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Articles
+                        Projects
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {% for tag in tags %}
-                            <a class="dropdown-item" href="{{ path('homepagearticles', {'category': tag.getName()}) }}">{{ tag.getName()|capitalize }}</a>
+                            <a class="dropdown-item"
+                               href="{{ path('homepagearticles', {'category': tag.getName()}) }}">{{ tag.getName()|capitalize }}</a>
                         {% endfor %}
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ path('homepagearticles', {'category': 'all'}) }}">All</a>
@@ -44,7 +46,8 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" method="post" action="{{ path('homepagesearch') }}">
-                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search"
+                       aria-label="Search">
                 <button class="search btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -54,7 +57,7 @@
 {% block footer %}
     {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set')) }}
     <div class="footer">
-        &copy; {{ 'now'|date('Y')}} Xander Van der Herten and Cis Magito
+        &copy; {{ 'now'|date('Y') }} Xander Van der Herten and Cis Magito
     </div>
 {% endblock %}
 {% block javascripts %}
