@@ -24,7 +24,7 @@
             <div class="col-12 col-sm-6 col-xl-3 article_wrapper">
                 <div class="article">
                     <h1><a href="{{ path('homepagearticle', {'id': article.id}) }}">{{ article.title|capitalize }}</a></h1><br>
-                    <a href="{{ path('homepagearticle', {'id': article.id}) }}"> <img class="article_image" src="{{ vich_uploader_asset(article,'imageFile') }}" alt="project demo image" /></a><br>
+{#                    <a href="{{ path('homepagearticle', {'id': article.id}) }}"> <img class="article_image" src="{{ vich_uploader_asset(article,'imageFile') }}" alt="project demo image" /></a><br>#}
                     <br><span>{{ article.updatedAt |date("d/m/Y") }}</span><br>
                     Tags:
                     {% for tag in article.tags %}
