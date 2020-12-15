@@ -38,7 +38,7 @@
         <div id="latest">
             <h2>my latest project</h2><br>
             <h1><a href="{{ path('homepagearticle', {'id': last.id}) }}">{{ last.title|capitalize }}</a></h1><br>
-            <a href="{{ path('homepagearticle', {'id': last.id}) }}"><img class="article_image" src="{{ vich_uploader_asset(last,'imageFile') }}" alt="project demo image" /></a><br>
+{#            <a href="{{ path('homepagearticle', {'id': last.id}) }}"><img class="article_image" src="{{ vich_uploader_asset(last,'imageFile') }}" alt="project demo image" /></a><br>#}
             <br><span>Date updoaded: {{ last.updatedAt |date("d/m/Y") }}</span><br>
             <span>Tags:
         {% for tag in last.tags %}
